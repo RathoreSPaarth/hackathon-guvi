@@ -1,35 +1,58 @@
 body{
-    justify-content: center;
     display: flex;
-    background-image: linear-gradient(to right,#086972,#fbd46d);
+    justify-content: space-evenly;
+    background-image: url('gamebg.jpg');
+    overflow: hidden;
 }
 
-row{
-    display: flex;
-}
 
-#countdown{
-    font-size: xx-large;
-    border: solid black 1px;
-    border-radius: 10px;
-    background-color: blueviolet;
+#countdown,#scoreboard{
+    font-size: 400%;
+    border: none;
+    border-radius: 10%;
+    background-color: #85a392;
     color: white;
     font-family: 'Notable', sans-serif;
-    height: 100%;
+    height: 25%;
+    width: 100%;
+    text-align: center;
+    margin-top: 20%;
+    
+}
+
+#scoreboard{
+    margin-top: 10%;
+    
 }
 
 #base{
     margin-top: 5%;
     margin-left: 25%;
-    position: absolute;
+    /* position: absolute; */
+    /* padding: 50px; */
+    
 }
 
 .boxes{
     position: absolute;
-    width: 35px;
-    height: 35px;
+    width: 45px;
+    height: 45px;
     border-radius: 1px;
     border-width: 1px;
     border: solid black 1px;
     background-color: #cccccc;
+    opacity: 0.8;
+}
+
+#panel{
+    height: 50vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+h1{
+    text-align: center;
+    font-family: 'Notable', sans-serif;
+    margin-top: 25vh;
+    font-size: 500%;
 }
