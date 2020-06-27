@@ -1,6 +1,7 @@
 body{
     justify-content: center;
     display: flex;
+    background-image: linear-gradient(to right,#086972,#fbd46d);
 }
 
 row{
@@ -14,5 +15,21 @@ row{
     background-color: blueviolet;
     color: white;
     font-family: 'Notable', sans-serif;
-    height: 20%;
+    height: 100%;
+}
+
+#base{
+    margin-top: 5%;
+    margin-left: 25%;
+    position: absolute;
+}
+
+.boxes{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-radius: 1px;
+    border-width: 1px;
+    border: solid black 1px;
+    background-color: #cccccc;
 }
