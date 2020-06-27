@@ -22,8 +22,8 @@ function box() {
 let id = 0;
 function square(left, top) {
   let newSquare = document.createElement("div");
-  newSquare.style.left = left * 3 + "px";
-  newSquare.style.top = top * 3 + "px";
+  newSquare.style.left = left * 3.5 + "px";
+  newSquare.style.top = top * 3.5 + "px";
   newSquare.setAttribute("class", "boxes");
   newSquare.setAttribute("id", `${id}`);
   base.appendChild(newSquare);
@@ -110,7 +110,7 @@ function addClick() {
       if (document.getElementById(`${i}`).value == "X") {
         document.getElementById(`${i}`).innerHTML = document.getElementById(`${i}`).value
         document.getElementById(`${i}`).style.backgroundColor = "red"
-        alert("game over");
+        alert("Game Over | Well Played | Your score is : " + score  );
         location.reload();
       }
 
@@ -215,6 +215,9 @@ function points(){
         score++
     }
     scoreBoard.innerHTML = "SCORE: " + score;
+
+    if(score == 215)
+    alert("CONGRATS! YOU'VE WON THE GAME!")
 }
 
 scoreBoard.innerHTML = "SCORE: 0"
@@ -235,6 +238,11 @@ function startTimer() {
   countDown.innerHTML = m + ":" + s;
   //console.log(m);
   setTimeout(startTimer, 1000);
+  if(m==0 && s==0){
+      alert("Game Over! |" + " Your final Score is : " + score)
+
+      location.reload()
+  }
 }
 
 function checkSecond(sec) {
