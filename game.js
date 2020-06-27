@@ -1,23 +1,28 @@
 let base = document.createElement("div");
+base.setAttribute("id", "base");
 let countDown = document.createElement("div");
 countDown.setAttribute("id", "countdown");
 base.setAttribute("style", "height:75%; width: 75%");
 
-for (let row = 1; row <= 16; row++) {
-  let x = document.createElement("div");
-  x.setAttribute("id", `row-${row}`);
-  x.setAttribute("class", "row");
-  x.setAttribute("style", "border: 1px solid black; height: 10%; width:80%");
-  x.innerHTML = "check";
-  base.appendChild(x);
+//making layout
+
+function box(){
+    for(let i = 0; i<16; i++){
+        for(let j = 0; j<16 ; j++){
+            square(i*16,j*16)
+        }
+    }
 }
 
-for (let col = 1; col <= 16; col++) {
-  let x = document.createElement("div");
-  x.setAttribute("id", `row-1-col-${col}`);
-  x.setAttribute("class", "col");
-  x.setAttribute("style", "border: 1px solid black; height: 10%; width:80%");
+function square( left,top){
+    let newSquare = document.createElement('div')
+    newSquare.style.left = left*2 + "px";
+    newSquare.style.top = top*2 + "px"
+    newSquare.setAttribute('class','boxes')
+    base.appendChild(newSquare)
 }
+
+box()
 
 //countdown
 countDown.innerHTML =
