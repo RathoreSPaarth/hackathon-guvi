@@ -1,0 +1,32 @@
+button{
+    height: 100%;
+    width: 100%;
+    border: none; 
+    border-radius: 10%;
+    background-color: #1b6ca8;
+    color: white;
+    font-size: xx-large;
+    cursor: pointer;
+}
+body{
+    display: flex;
+    justify-content: center;
+    /* overflow: hidden; */
+    font-family: 'Notable', sans-serif;
+    height: 100%;
+    width: 100%;
+}
+
+div{
+    height: 10%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    justify-content: center;
+    display: flex;
+    margin-top: 40%;
+}
+h1{
+    text-align: center;
+    font-size: 400%;
+}

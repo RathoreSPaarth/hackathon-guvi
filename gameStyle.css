@@ -1,0 +1,18 @@
+body{
+    justify-content: center;
+    display: flex;
+}
+
+row{
+    display: flex;
+}
+
+#countdown{
+    font-size: xx-large;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: blueviolet;
+    color: white;
+    font-family: 'Notable', sans-serif;
+    height: 20%;
+}
