@@ -1,15 +1,25 @@
+window.onload = alert("PLEASE SWITCH TO FULL SCREEN MODE ON A DESKTOP FOR BEST EXPERIENCE")
+
 let base = document.createElement("div");
-base.setAttribute("id", "base");
 let countDown = document.createElement("div");
+let panel = document.createElement('div')
+let scoreBoard = document.createElement('div')
+let heading = document.createElement('div')
+let main = document.createElement('div')
+
+//assigning ID
+base.setAttribute("id", "base");
 countDown.setAttribute("id", "countdown");
+panel.setAttribute("id", "panel");
+scoreBoard.setAttribute("id", "scoreboard");
+heading.setAttribute('id','heading')
+main.setAttribute('id','main')
+
+
+heading.innerHTML = "MINESWEEPER (MEDIUM)"
 base.setAttribute("style", "height:75%; width: 75%");
 
-let panel = document.createElement('div')
-panel.setAttribute("id", "panel");
-let scoreBoard = document.createElement('div')
-scoreBoard.setAttribute("id", "scoreboard");
-let heading = document.createElement('h1')
-heading.innerHTML = "MINESWEEPER"
+
 //making layout
 
 function box() {
@@ -52,9 +62,7 @@ function setValues() {
     count = 0;
     let bb = document.getElementById(`${i}`);
     if (bb.value != "X") {
-      // continue;
-
-      // else
+     
       if (
         document.getElementById(`${i - 17}`) != null &&
         document.getElementById(`${i - 17}`).value == "X"
@@ -196,15 +204,13 @@ function clean(i){
   
 }
 
-// function clean(){
-//     document.getElementById(this).style.backgroundColor = "green"
-// }
+
 setTimeout(addClick, 1000);
 
 
 
 
-let score;
+let score = 0;
 // add points
 
 function points(){
@@ -259,7 +265,7 @@ function checkSecond(sec) {
 
 panel.appendChild(countDown)
 panel.appendChild(scoreBoard)
-
+main.appendChild(base)
+main.appendChild(panel)
 document.body.appendChild(heading)
-document.body.appendChild(base);
-document.body.appendChild(panel);
+document.body.appendChild(main)
