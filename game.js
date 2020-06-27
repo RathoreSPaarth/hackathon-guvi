@@ -13,16 +13,75 @@ function box(){
         }
     }
 }
-
+let id = 0;
 function square( left,top){
     let newSquare = document.createElement('div')
     newSquare.style.left = left*2 + "px";
     newSquare.style.top = top*2 + "px"
     newSquare.setAttribute('class','boxes')
+    newSquare.setAttribute('id',`${id}`)
     base.appendChild(newSquare)
+    id++
 }
 
 box()
+
+//setting bombs
+
+window.onload = function setBombs(){
+    let arr = [];
+    for(let i = 0; i<40; i++){
+        arr.push(Math.floor(Math.random()*256))
+    }
+
+    for(let i = 0; i<40; i++){
+        document.getElementById(`${arr[i]}`).innerHTML = 'X'
+        
+    }
+    }
+
+
+//set values in cells as per no. of X
+function setValues(){
+let count;
+for(let i = 0; i<256; i++){
+    count = 0;
+    let bb = document.getElementById(`${i}`)
+    if(bb.innerHTML!='X')
+    // continue;
+
+    // else
+    {
+        if(document.getElementById(`${i-17}`) != null && document.getElementById(`${i-17}`).innerHTML =='X')
+            count++;
+        if(document.getElementById(`${i-16}`) != null && document.getElementById(`${i-16}`).innerHTML =='X')
+            count++;
+        if(document.getElementById(`${i-15}`) != null && document.getElementById(`${i-15}`).innerHTML =='X')
+            count++;
+        if(document.getElementById(`${i-1}`) != null && document.getElementById(`${i-1}`).innerHTML =='X')
+            count++; 
+        if(document.getElementById(`${i+1}`) != null && document.getElementById(`${i+1}`).innerHTML =='X')
+            count++; 
+        if(document.getElementById(`${i+15}`) != null && document.getElementById(`${i+15}`).innerHTML =='X')
+            count++; 
+        if(document.getElementById(`${i+16}`) != null && document.getElementById(`${i+16}`).innerHTML =='X')
+            count++;
+        if(document.getElementById(`${i+17}`) != null && document.getElementById(`${i+17}`).innerHTML =='X')
+            count++;
+            
+        
+    }
+    if(count!=0)
+    bb.innerHTML = count
+}
+
+}
+
+setTimeout(setValues,1000)
+
+
+
+
 
 //countdown
 countDown.innerHTML =
@@ -50,4 +109,4 @@ function checkSecond(sec) {
 
 
 document.body.appendChild(base);
-document.body.appendChild(countDown);
+//document.body.appendChild(countDown);
